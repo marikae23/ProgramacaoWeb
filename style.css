@@ -90,6 +90,17 @@ form button:hover {
     background-color: #ff8fab;
 }
 
+#github-link {
+    color: #4a4e69;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: text-decoration 0.3s ease;
+}
+
+#github-link:hover {
+    text-decoration: underline;
+}
+
 footer {
     position: absolute;
     bottom: 10px;
