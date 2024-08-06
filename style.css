@@ -91,13 +91,15 @@ form button:hover {
 }
 
 #github-link {
-    color: #4a4e69;
+    color: #9c7882;
     text-decoration: none;
     font-size: 0.9rem;
+    font-weight: 500;
     transition: text-decoration 0.3s ease;
 }
 
 #github-link:hover {
+    color: #ceb6bd;
     text-decoration: underline;
 }
 
