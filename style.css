@@ -1,18 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-section {
-    background-color: #22223b;
-    width: 100%;
-    height: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -22,47 +14,80 @@ section {
     justify-content: center;
     height: 100vh;
     padding: 20px;
-    background-color: #f2e9e4;
+    background-color: #44393c;
+    position: relative; 
 }
 
 .form-box {
-    background-color: #ffffff;
+    background-color: #f0efeb;
     padding: 70px;
     border-radius: 35px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 500px;
     width: 100%;
+    z-index: 2;
+    position: relative; 
+}
+
+.bg-image {
+    position: absolute;
+    top: 8%;
+    left: 67%;
+    transform: translateX(-50%);
+    z-index: 1; 
+    max-width: 30%;
+    opacity: 0.8; 
+}
+
+.bg-image2 {
+    position: absolute;
+    top: 39%;
+    left: 19%;
+    transform: translateX(-50%);
+    transform: rotate(330deg);
+    z-index: 1; 
+    max-width: 20%;
+    opacity: 0.8; 
 }
 
 #titulo {
-    font-size: 2rem;
-    color: #4a4e69;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3142;
     margin-bottom: 20px;
+}
+
+#titulo span{
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #d81159;
 }
 
 form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 2px solid #4a4e69;
+    border: 2px solid #d0b8ac;
     border-radius: 5px;
     font-size: 1rem;
 }
 
 form button {
-    background-color: #4a4e69;
+    background-color: #d81159;
+    font-weight: 900;
     font-size: 20px;
-    color: #f2e9e4;
-    padding: 15px 35px;
+    color: #ffffff;
+    padding: 15px 55px;
     border: none;
-    border-radius: 5px;
+    border-radius: 40px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #9a8c98;
+    color: #22223b;
+    background-color: #ff8fab;
 }
 
 footer {
@@ -70,6 +95,6 @@ footer {
     bottom: 10px;
     width: 100%;
     text-align: center;
-    color: #4a4e69;
+    color: #9c7882;
     font-size: 0.9rem;
 }
