@@ -25,16 +25,24 @@ section {
     background-color: #f2e9e4;
 }
 
+.form-box {
+    background-color: #ffffff;
+    padding: 70px;
+    border-radius: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
 #titulo {
     font-size: 2rem;
     color: #4a4e69;
     margin-bottom: 20px;
-    text-align: center;
 }
 
 form input {
     width: 100%;
-    max-width: 300px;
     padding: 10px;
     margin-bottom: 15px;
     border: 2px solid #4a4e69;
@@ -44,8 +52,9 @@ form input {
 
 form button {
     background-color: #4a4e69;
+    font-size: 20px;
     color: #f2e9e4;
-    padding: 10px 20px;
+    padding: 15px 35px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
