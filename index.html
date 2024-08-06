@@ -11,15 +11,17 @@
     <section></section>
 
     <div class="container">
-        <h1 id="titulo">Formulário de Informações Pessoais</h1>
-        <form id="formulario">
-            <input type="text" id="nome" placeholder="Nome" required>
-            <input type="number" id="idade" placeholder="Idade" required>
-            <input type="text" id="cpf" placeholder="CPF" maxlength="14" required>
-            <div> 
-                <button type="submit">Ok!</button>
-            </div>
-        </form>
+        <div class="form-box">
+            <h1 id="titulo">Formulário de Informações Pessoais</h1>
+            <form id="formulario">
+                <input type="text" id="nome" placeholder="Nome" required>
+                <input type="number" id="idade" placeholder="Idade" required>
+                <input type="text" id="cpf" placeholder="CPF" maxlength="14" required>
+                <div> 
+                    <button type="submit">Ok!</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <footer>Criado por Eguchi</footer>
@@ -45,8 +47,9 @@
                 this.value = value.replace(/(\d{3})/, "$1.");
             }
         });
+
         document.getElementById('formulario').addEventListener('submit', function(event) {
-            event.preventDefault();
+            event.preventDefault(); 
             window.location.href = 'https://youtu.be/dQw4w9WgXcQ?si=uemxSGRv3kJmjJso';
         });
     </script>
