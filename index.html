@@ -13,9 +13,9 @@
     <div class="container">
         <h1 id="titulo">Formulário de Informações Pessoais</h1>
         <form id="formulario">
-            <input type="text" placeholder="Nome" required>
-            <input type="number" placeholder="Idade" required>
-            <input type="text" placeholder="CPF" required>
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="number" id="idade" placeholder="Idade" required>
+            <input type="text" id="cpf" placeholder="CPF" maxlength="14" required>
             <div> 
                 <button type="submit">Ok!</button>
             </div>
@@ -23,9 +23,30 @@
     </div>
 
     <footer>Criado por Eguchi</footer>
+
     <script>
+        document.getElementById('idade').addEventListener('input', function() {
+            if (this.value < 0) {
+                this.value = '';
+            }
+        });
+
+        document.getElementById('cpf').addEventListener('input', function(event) {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+
+            if (value.length > 9) {
+                this.value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+            } else if (value.length > 6) {
+                this.value = value.replace(/(\d{3})(\d{3})(\d{3})/, "$1.$2.$3-");
+            } else if (value.length > 3) {
+                this.value = value.replace(/(\d{3})(\d{3})/, "$1.$2.");
+            } else if (value.length > 0) {
+                this.value = value.replace(/(\d{3})/, "$1.");
+            }
+        });
         document.getElementById('formulario').addEventListener('submit', function(event) {
-            event.preventDefault(); 
+            event.preventDefault();
             window.location.href = 'https://youtu.be/dQw4w9WgXcQ?si=uemxSGRv3kJmjJso';
         });
     </script>
