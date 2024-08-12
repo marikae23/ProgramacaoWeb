@@ -8,6 +8,11 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
+// Rota personalizada para o formulário
+app.get('/formulario-de-informacoes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.post('/submit', (req, res) => {
     const newData = req.body;
 
@@ -33,5 +38,5 @@ app.post('/submit', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando em http://localhost:${port}/formulario-de-informacoes`);
 });
