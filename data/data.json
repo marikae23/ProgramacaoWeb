@@ -1,12 +1,7 @@
 [
   {
-    "name": "Maria Eduarda de Moura Eguchi",
-    "cpf": "123.456.789-10",
-    "age": 23
-  },
-  {
-    "name": "Maria Eduarda de Moura Eguchi",
-    "cpf": "123.456.789-10",
-    "age": 20
+    "name": "",
+    "cpf": "",
+    "age": null
   }
 ]

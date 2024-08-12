@@ -1,21 +1,27 @@
 function formatCPF(cpf) {
-    cpf = cpf.replace(/\D/g, '');
-    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
-    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
-    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-    return cpf;
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
 }
 
 document.getElementById('cpf').addEventListener('input', function(e) {
-    e.target.value = formatCPF(e.target.value);
+    let input = e.target;
+    let value = input.value.replace(/\D/g, '');
+    if (value.length <= 11) {
+        input.value = formatCPF(value);
+    }
 });
 
 function submitForm() {
-    const name = document.getElementById('name').value;
-    const cpf = document.getElementById('cpf').value;
-    const age = parseInt(document.getElementById('age').value);
+    const form = document.getElementById('infoForm');
+    const name = document.getElementById('name').value.trim();
+    const cpf = document.getElementById('cpf').value.trim();
+    const age = document.getElementById('age').value.trim();
 
-    if (age < 0) {
+    if (name === '' || cpf === '' || age === '') {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+
+    if (isNaN(age) || age < 0) {
         alert('A idade não pode ser negativa.');
         return;
     }
@@ -26,17 +32,22 @@ function submitForm() {
         age: age
     };
 
-    fetch('/submit', {
+    fetch('/save-data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Dados salvos:', data);
-        alert('Informações enviadas com sucesso');
+    .then(response => {
+        if (response.ok) {
+            alert('Informações enviadas com sucesso');
+            form.reset(); 
+        } else {
+            alert('Ocorreu um erro ao enviar as informações.');
+        }
     })
-    .catch(error => console.error('Erro ao salvar dados:', error));
+    .catch(error => {
+        alert('Ocorreu um erro: ' + error.message);
+    });
 }
