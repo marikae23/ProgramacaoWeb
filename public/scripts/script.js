@@ -10,6 +10,10 @@ document.getElementById('cpf').addEventListener('input', function(e) {
     }
 });
 
+function formatEmail(email) {
+    return /^[\w]+@[\w]+.[a-zA-Z]+$/.test(email)
+}
+
 function submitForm() {
     const form = document.getElementById('infoForm');
     const name = document.getElementById('name').value.trim();
